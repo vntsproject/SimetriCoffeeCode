@@ -26,7 +26,7 @@ export function ReservationFlow() {
   const [tables, setTables] = useState<TableEntry[]>(fallbackTables.map((t) => ({ ...t, available: true })));
   const [selectedTable, setSelectedTable] = useState<TableEntry | null>(null);
   const [items, setItems] = useState<MenuItem[]>(fallbackMenu);
-  const [activeCategory, setActiveCategory] = useState(menuCategories[0].slug);
+  const [activeCategory, setActiveCategory] = useState<(typeof menuCategories)[number]["slug"]>(menuCategories[0].slug);
   const [cart, setCart] = useState<Cart>({});
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
