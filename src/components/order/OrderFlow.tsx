@@ -23,7 +23,7 @@ export function OrderFlow() {
   const tableFromQr = Number(params.get("table"));
   const [table, setTable] = useState<number | null>(Number.isFinite(tableFromQr) && tableFromQr > 0 ? tableFromQr : null);
   const [items, setItems] = useState<MenuItem[]>(fallbackMenu);
-  const [activeCategory, setActiveCategory] = useState(menuCategories[0].slug);
+  const [activeCategory, setActiveCategory] = useState<(typeof menuCategories)[number]["slug"]>(menuCategories[0].slug);
   const [cart, setCart] = useState<Cart>({});
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
